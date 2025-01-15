@@ -1,0 +1,51 @@
+---
+import ImageSlider from "@components/ui/ImageSlider.astro";
+
+import concurso from "@assets/images/hero/concurso-de-meritos.webp";
+import inscripciones from "@assets/images/hero/inscripciones.webp";
+import sinfonia from "@assets/images/hero/la-sinfonia-de-nuestra-gente.webp";
+import admisiones from "@assets/images/hero/lista-de-admisiones.webp";
+import portal from "@assets/images/hero/portal.webp";
+
+type Images = {
+  width: number;
+  height: number;
+  imageMetadata: ImageMetadata;
+  alt: string;
+};
+
+const images: Images[] = [
+  {
+    width: 1920,
+    height: 1080,
+    imageMetadata: concurso,
+    alt: "Concurso de Meritos",
+  },
+  {
+    width: 1920,
+    height: 1080,
+    imageMetadata: inscripciones,
+    alt: "Inscripciones",
+  },
+  {
+    width: 1920,
+    height: 1080,
+    imageMetadata: sinfonia,
+    alt: "La Sinfonia de Nuestra Gente",
+  },
+  {
+    width: 1920,
+    height: 1080,
+    imageMetadata: admisiones,
+    alt: "Lista de Admisiones",
+  },
+  {
+    width: 1920,
+    height: 1080,
+    imageMetadata: portal,
+    alt: "Portal",
+  },
+];
+---
+
+<ImageSlider images={images} />

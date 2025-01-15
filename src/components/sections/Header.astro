@@ -1,0 +1,142 @@
+---
+import { Picture } from "astro:assets";
+import { UNICAUCA_BASE_URL } from "astro:env/server";
+
+import ProfileMenu from "@components/ProfileMenu.svelte";
+import NavMenu from "@components/NavMenu.svelte";
+import LanguageMenu from "@components/LanguageMenu.svelte";
+import AcademicOfferMenu from "@components/AcademicOfferMenu.svelte";
+import AdmissionsMenu from "@components/AdmissionsMenu.svelte";
+
+import logoUnicauca from "@assets/images/logoUnicauca.webp";
+import Correo from "@assets/svg/correo.svg";
+import Biblioteca from "@assets/svg/biblioteca.svg";
+import { getCollection } from "astro:content";
+
+const NAV = {
+  part1: [
+    {
+      label: "Trasnparencia",
+      href: UNICAUCA_BASE_URL + "/transparencia",
+    },
+    {
+      label: "Atencion al ciudadano",
+      href: UNICAUCA_BASE_URL + "/atencion-al-ciudadano",
+    },
+    {
+      label: "Participa",
+      href: UNICAUCA_BASE_URL + "/participa",
+    },
+  ],
+  part2: [
+    {
+      Icon: Correo,
+      href: UNICAUCA_BASE_URL + "/correo-unicauca",
+    },
+    {
+      Icon: Biblioteca,
+      href:
+        UNICAUCA_BASE_URL +
+        "/vicerrectoria-academica/division-de-gestion-de-medios-y-recursos-bibliograficos/",
+    },
+  ],
+  part3: [
+    {
+      label: "Investigación",
+      href: UNICAUCA_BASE_URL + "/viserrectoria-de-investigaciones",
+    },
+    {
+      label: "Cultura y Bienestar",
+      href: UNICAUCA_BASE_URL + "/viserrectoria-de-cultura-y-bienestar",
+    },
+    {
+      label: "La Universidad",
+      href: UNICAUCA_BASE_URL + "/la-universidad",
+    },
+  ],
+};
+
+const menuContent = await getCollection("navMenu");
+
+const items = menuContent.map((item) => {
+  return item.data;
+});
+---
+
+<header class="bg-primary w-full h-28 flex z-50 fixed">
+  <a href="/">
+    <Picture
+      src={logoUnicauca}
+      format="avif"
+      alt="Logo Unicauca"
+      width="320"
+      height="180"
+      class="object-contain aspect-video h-full w-fit"
+    />
+  </a>
+  <div class="w-full">
+    <nav class="bg-secondary w-full h-14 flex justify-between px-10">
+      <ul class="flex items-center gap-x-7 justify-center">
+        {
+          NAV.part1.map(({ href, label }) => (
+            <a
+              href={href}
+              class="text-primary font-semibold p-2 border-bottom relative"
+            >
+              {label}
+            </a>
+          ))
+        }
+      </ul>
+      <ul class="flex items-center gap-x-5 justify-center">
+        {
+          NAV.part2.map(({ Icon, href }) => (
+            <a
+              href={href}
+              class="text-primary font-semibold relative p-2 border-bottom"
+            >
+              <Icon />
+            </a>
+          ))
+        }
+        <ProfileMenu client:idle />
+        <LanguageMenu client:idle />
+      </ul>
+    </nav>
+    <nav class="w-full h-14 flex justify-between items-center px-10">
+      <NavMenu client:idle sections={items} />
+      <ul class="flex items-center gap-x-5">
+        <AcademicOfferMenu client:idle />
+        {
+          NAV.part3.map(({ label, href }) => (
+            <a
+              href={href}
+              class="text-white font-semibold p-2 border-bottom relative"
+            >
+              {label}
+            </a>
+          ))
+        }
+        <AdmissionsMenu client:idle />
+      </ul>
+      <NavMenu client:idle sections={items} />
+    </nav>
+  </div>
+</header>
+
+<style>
+  .border-bottom::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: #db141c;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .border-bottom:hover::after {
+    width: 100%;
+  }
+</style>

@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "sistemas-de-informacion",
+    "title": "Sistemas de información",
+    "items": [
+      {
+        "label": "Sistema Integrado de Matrícula y Control Académico (SIMCA)",
+        "href": "https://simca.unicauca.edu.co/simca/"
+      },
+      {
+        "label": "Biblioteca",
+        "href": "https://www.unicauca.edu.co/biblioteca/"
+      },
+      {
+        "label": "Sistema de Información Vicerrectoría de Investigaciones (SIVRI)",
+        "href": "https://www.unicauca.edu.co/sisvri/"
+      },
+      {
+        "label": "Sistema de Contratación",
+        "href": "https://www.unicauca.edu.co/contratacion/viceadmin/contratacion-lgarantias/"
+      },
+      {
+        "label": "Solicitud de Mantenimiento",
+        "href": "https://www.unicauca.edu.co/eplux_unicauca/login.php"
+      },
+      {
+        "label": "Catálogo de Biblioteca",
+        "href": "http://alejandria.unicauca.edu.co/"
+      },
+      {
+        "label": "Sistema de Atención y Soporte (SaTis)",
+        "href": "https://tic.unicauca.edu.co/satis/pages/UI.php"
+      },
+      {
+        "label": "Banco de Aspirantes",
+        "href": "https://www.unicauca.edu.co/bancoOferentes/"
+      },
+      {
+        "label": "Banco de Aspirantes",
+        "href": "https://www.unicauca.edu.co/bancoOferentes/"
+      },
+      {
+        "label": "Sistema de Control Interno",
+        "href": "https://rectoria.unicauca.edu.co/oficina-control-interno/#/auth/login"
+      },
+      {
+        "label": "Sistema de Control de Recursos Físicos",
+        "href": "https://das.unicauca.edu.co/rfisicos/#/"
+      }
+    ]
+  },
+  {
+    "slug": "plataformas-virtuales",
+    "title": "Plataformas virtuales",
+    "items": [
+      {
+        "label": "MOODLE",
+        "href": "https://univirtual.unicauca.edu.co/moodle/login/index.php"
+      },
+      {
+        "label": "EVA",
+        "href": "http://eva.unicauca.edu.co/register/"
+      },
+      {
+        "label": "SELENE",
+        "href": "http://selene.unicauca.edu.co/"
+      }
+    ]
+  },
+  {
+    "slug": "servicios-unicauca",
+    "title": "Servicios Unicauca",
+    "items": [
+      {
+        "label": "Consultorio Jurídico",
+        "href": "https://portalantiguo.unicauca.edu.co/versionP/node/25642"
+      },
+      {
+        "label": "Unilingua",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-academica/facultad-de-ciencias-humanas-y-sociales/quienes-somos-unilingua/"
+      },
+      {
+        "label": "Unidad de Salud",
+        "href": "https://unisalud.unicauca.edu.co/unisalud/"
+      },
+      {
+        "label": "Carnetización",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-academica/darca/carnetizacion/"
+      },
+      {
+        "label": "Centro Universitario de Salud Alfonso López",
+        "href": "https://www.unicauca.edu.co/pagina-en-construccion/"
+      },
+      {
+        "label": "Centro de Escucha",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-de-cultura-y-bienestar/centro-de-escucha/"
+      },
+      {
+        "label": "Bolsa de Empleo",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-academica/area-de-egresados/bolsa-de-empleo/"
+      },
+      {
+        "label": "Auditorios",
+        "href": "https://www.unicauca.edu.co/pagina-en-construccion/"
+      },
+      {
+        "label": "Centro de Escritura",
+        "href": "https://www.unicauca.edu.co/pagina-en-construccion/"
+      }
+    ]
+  },
+  {
+    "slug": "nuestros-centros",
+    "title": "Nuestros centros",
+    "items": [
+      {
+        "label": "Centro de Gestión de la Calidad y la Acreditación Institucional",
+        "href": "https://www.unicauca.edu.co/la-universidad/rectoria/centro-de-gestion-de-la-calidad/"
+      },
+      {
+        "label": "Centro de Gestión de las Comunicaciones",
+        "href": "https://www.unicauca.edu.co/pagina-en-construccion/"
+      },
+      {
+        "label": "Centro de Educación Continua, Abierta y Virtual",
+        "href": "https://www.unicauca.edu.co/cecav/"
+      },
+      {
+        "label": "Centro de Posgrados",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-academica/centro-de-posgrados/"
+      },
+      {
+        "label": "Centro de Regionalización",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-academica/centro-de-regionalizacion/"
+      }
+    ]
+  },
+  {
+    "slug": "repositorio-unicauca",
+    "title": "Repositorio Unicauca",
+    "items": [
+      {
+        "label": "Programa LVMEN",
+        "href": "https://www.unicauca.edu.co/lvmen/"
+      },
+      {
+        "label": "Archivo Histórico",
+        "href": "https://www.unicauca.edu.co/vicerrectoria-academica/facultad-de-ciencias-humanas-y-sociales/archivo-historico/"
+      },
+      {
+        "label": "Gestión Documental",
+        "href": "https://www.unicauca.edu.co/pagina-en-construccion/"
+      },
+      {
+        "label": "Documentos Públicos",
+        "href": "https://www.unicauca.edu.co/documentos-publicos/"
+      },
+      {
+        "label": "Repositorio Biblioteca",
+        "href": "https://www.unicauca.edu.co/biblioteca/catalogo-y-repositorio/"
+      }
+    ]
+  }
+]

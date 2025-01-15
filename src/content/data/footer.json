@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Enlaces de interés",
+    "slug": "enlaces-de-interes",
+    "items": [
+      {
+        "label": "Política de privacidad y tratamiento de datos personales",
+        "href": "https://www.unicauca.edu.co/wp-content/uploads/2024/08/Politica-de-Tratamiento-de-Datos.pdf"
+      },
+      {
+        "label": "Política de derechos de autor y/o autorización sobre uso de contenidos",
+        "href": "https://www.unicauca.edu.co/wp-content/uploads/2024/08/ACUERDO-SUPERIOR-004-DE-2018-POR-EL-CUAL-SE-MODIFICA-Y-ADICIONA-EL-ACUERDO-008-DE-1999-O-ESTATUTO-SOBRE-LA-PROPIEDAD-INTELECTUAL-EN-LA-UNIVERSIDAD-DEL-CAUCA.pdf"
+      },
+      {
+        "label": "Canales físicos y electrónicos",
+        "href": "https://www.unicauca.edu.co/atencion-al-ciudadano/"
+      },
+      {
+        "label": "Lineamientos de Publicación en Portal Web",
+        "href": "https://www.unicauca.edu.co/wp-content/uploads/2024/08/Lineamientos-de-Publicacion-en-Portal-Web.pdf"
+      },
+      {
+        "label": "Plantillas Institucionales",
+        "href": "https://www.unicauca.edu.co/wp-content/uploads/2024/08/PE-GS-2.2-OD-10-Plantilla-Powerpoint-Institucional-V4.pptx"
+      },
+      {
+        "label": "Micrositios",
+        "href": "https://www.unicauca.edu.co/rudecolombia/"
+      }
+    ]
+  },
+  {
+    "title": "Contáctanos",
+    "slug": "contactanos",
+    "items": [
+      {
+        "label": "Dirección: Calle 5 # 4 - 70 | Popayán, Colombia"
+      },
+      {
+        "label": "Teléfono: +57 (602) 820 9900"
+      },
+      {
+        "label": "Línea gratuita: 018000 949020"
+      },
+      {
+        "label": "Sistema PQRSF.",
+        "href": "https://www.unicauca.edu.co/atencion-al-ciudadano/pqrsd/"
+      },
+      {
+        "label": "Correo: quejasreclamos@unicauca.edu.co",
+        "href": "mailto:quejasreclamos@unicauca.edu.co"
+      },
+      {
+        "label": "Notificaciones judiciales"
+      },
+      {
+        "label": "Correo: procesos@unicauca.edu.co",
+        "href": "mailto:procesos@unicauca.edu.co"
+      },
+      {
+        "label": "Portal web anterior",
+        "href": "https://portalantiguo.unicauca.edu.co/"
+      }
+    ]
+  }
+]

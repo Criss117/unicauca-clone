@@ -1,0 +1,33 @@
+---
+interface Props {
+  class?: string;
+  asChild?: boolean;
+}
+
+const { class: className, asChild = false } = Astro.props;
+---
+
+{
+  asChild && (
+    <div
+      class:list={[
+        "bg-primary rounded-lg hover:bg-secondary transition-colors border-2 border-primary",
+        className,
+      ]}
+    >
+      <slot />
+    </div>
+  )
+}
+{
+  !asChild && (
+    <button
+      class:list={[
+        "bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/80 transition-colors",
+        className,
+      ]}
+    >
+      <slot />
+    </button>
+  )
+}

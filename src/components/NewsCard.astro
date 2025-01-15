@@ -1,0 +1,75 @@
+---
+import { Picture } from "astro:assets";
+
+import Card from "@components/ui/Card.astro";
+import Button from "./ui/Button.astro";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+interface Props {
+  class?: string;
+  title: string;
+  description: string;
+  slug: string;
+  hero: string;
+}
+
+const { class: className, title, description, slug, hero } = Astro.props;
+---
+
+<Card class={className}>
+  <Picture
+    src={hero}
+    alt={title}
+    width={300}
+    height={300}
+    class="aspect-video object-cover w-full rounded-t-lg"
+  />
+
+  <div class="p-10 flex flex-col gap-y-5">
+    <div class="space-y-5">
+      <a href={`/noticias-actualidad/${slug}`} class="cursor-pointer">
+        <h3
+          class="font-bold text-primary text-start truncate-text truncate-title"
+        >
+          {title}
+        </h3>
+      </a>
+      <p
+        class="text-sm text-start text-wrap truncate-text truncate-description"
+      >
+        {description}
+      </p>
+    </div>
+
+    <a
+      href={`/noticias-actualidad/${slug}`}
+      class:list={[
+        "bg-primary text-white rounded-full px-4 py-2 hover:bg-secondary hover:text-primary",
+        " transition-colors w-fit border-2 border-primary",
+      ]}
+    >
+      Leer más
+    </a>
+  </div>
+</Card>
+
+<style>
+  .truncate-text {
+    display: -webkit-box;
+    /* Número máximo de líneas visibles */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega "..." al final si el texto se corta */
+  }
+
+  .truncate-description {
+    -webkit-line-clamp: 5;
+  }
+
+  .truncate-title {
+    -webkit-line-clamp: 2;
+  }
+</style>

@@ -1,0 +1,182 @@
+---
+import { Picture } from "astro:assets";
+
+import logoUnicaucaAzul from "@assets/images/Logo-Unicauca-Azul.webp";
+import govco from "@assets/images/gov.co.webp";
+import iqnet from "@assets/images/IQNET.webp";
+import logoISO from "@assets/images/Logo_ISO.webp";
+
+import LinkEndl from "@assets/svg/linkendl.svg";
+import facebook from "@assets/svg/facebook.svg";
+import instagram from "@assets/svg/instagram.svg";
+import x from "@assets/svg/x.svg";
+import youtube from "@assets/svg/youtube.svg";
+import tiktok from "@assets/svg/tiktok.svg";
+import { getCollection } from "astro:content";
+
+const footerImages = [
+  {
+    src: logoUnicaucaAzul,
+    alt: "Logo Unicauca Azul",
+    width: 150,
+    height: 150,
+    class: "aspect-video",
+  },
+  {
+    src: govco,
+    alt: "Logo Gov.co",
+    width: 60,
+    height: 60,
+    class: "aspect-square",
+  },
+
+  {
+    src: logoISO,
+    alt: "Logo ISO",
+    width: 40,
+    height: 40,
+    class: "aspect-square",
+  },
+  {
+    src: iqnet,
+    alt: "Logo IQNET",
+    width: 40,
+    height: 40,
+    class: "aspect-square",
+  },
+] as const;
+
+const socials = [
+  {
+    href: "https://www.linkedin.com/school/universidad-del-cauca/posts/?feedView=all",
+    Icon: LinkEndl,
+  },
+  {
+    href: "https://www.facebook.com/universidadelcauca",
+    Icon: facebook,
+  },
+  {
+    href: "https://www.instagram.com/universidadelcauca/",
+    Icon: instagram,
+  },
+  {
+    href: "https://x.com/unicauca",
+    Icon: x,
+  },
+  {
+    href: "https://www.youtube.com/user/unicaucapopayan",
+    Icon: youtube,
+  },
+  {
+    href: "https://www.tiktok.com/@unicauca_",
+    Icon: tiktok,
+  },
+] as const;
+
+const footerLinks = await getCollection("footer");
+
+const footerItems = footerLinks.map((item) => {
+  return item.data;
+});
+---
+
+<div class="w-full h-2 flex">
+  <div class="w-1/5 h-full bg-[#db141c]"></div>
+  <div class="w-1/5 h-full bg-[#ff6c08]"></div>
+  <div class="w-1/5 h-full bg-[#ffb000]"></div>
+  <div class="w-1/5 h-full bg-[#00aae5]"></div>
+  <div class="w-1/5 h-full bg-[#5a00ba]"></div>
+</div>
+<footer class="bg-bg-secondary min-h-96">
+  <div class="w-full flex justify-between px-36 py-10">
+    <div class="space-y-5 min-h-full flex flex-col">
+      <header>
+        <h3 class="text-primary font-semibold text-3xl">
+          Universidad del Cauca
+        </h3>
+        <p class="text-primary font-semibold">NIT. 891500319-2</p>
+      </header>
+
+      <div class="flex gap-x-2 items-center">
+        {
+          footerImages.map(({ alt, height, width, src, class: className }) => (
+            <a href="#" class="mx-auto">
+              <Picture
+                src={src}
+                format="webp"
+                alt={alt}
+                width={width}
+                height={height}
+                class:list={["object-contain ", className]}
+              />
+            </a>
+          ))
+        }
+      </div>
+      <div class="flex items-end gap-x-2 flex-grow">
+        <div class="flex gap-x-2 items-center">
+          <p class="text-primary font-semibold">Síguenos en:</p>
+          {
+            socials.map(({ href, Icon }) => (
+              <a
+                href={href}
+                target="_blank"
+                class="bg-primary p-1 rounded-full border-2 border-primary hover:bg-transparent group transition-colors"
+              >
+                <Icon class="h-5 w-5 text-white group-hover:text-primary" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="space-y-5">
+      <h3 class="text-primary font-semibold text-3xl">
+        {footerItems[0].title}
+      </h3>
+      <ul class="flex flex-col gap-y-3">
+        {
+          footerItems[0].items.map(({ label, href }) => (
+            <a
+              href={href}
+              target="_blank"
+              class="text-text-primary text-sm hover:text-text-primary/80 transition-colors"
+            >
+              {label}
+            </a>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="space-y-5">
+      <h3 class="text-primary font-semibold text-3xl">
+        {footerItems[0].title}
+      </h3>
+      <ul class="flex flex-col gap-y-3">
+        {
+          footerItems[1].items.map(({ label, href }) => {
+            if (!href)
+              return <li class="text-text-primary text-sm">{label}</li>;
+
+            return (
+              <a
+                href={href}
+                target="_blank"
+                class="text-text-primary text-sm hover:text-text-primary/80 transition-colors"
+              >
+                {label}
+              </a>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+  <p class="text-center text-sm text-text-primary italic">
+    Institución con Acreditación de Alta Calidad por 8 años, resolución MEN 6218
+    de 2019 - Vigilada MinEducación
+  </p>
+  <p class="text-center text-sm text-text-primary italic">
+    Comunícate con nuestro Soporte Técnico
+  </p>
+</footer>

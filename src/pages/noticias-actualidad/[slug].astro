@@ -1,0 +1,74 @@
+---
+import Card from "@components/ui/Card.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { Image, Picture } from "astro:assets";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const allNews = await getCollection("news");
+
+  return allNews.map((news) => ({
+    params: { slug: news.data.slug },
+    props: { news },
+  }));
+}
+
+const { news } = Astro.props;
+
+const { Content } = await render(news);
+---
+
+<MainLayout title={news.data.title}>
+  <header class="max-w-[70%] mx-auto mt-28">
+    <h1 class="text-primary font-bold text-3xl underscore relative">
+      {news.data.title}
+    </h1>
+  </header>
+  <section class="max-w-[70%] mx-auto mt-28">
+    <Card class="w-1/2 shadow-primary/20">
+      <p class="text-text-primary p-8 text-sm">{news.data.description}</p>
+    </Card>
+  </section>
+  <section
+    id="listado-de-noticias"
+    class="grid grid-cols-2 max-w-[70%] mx-auto gap-x-10 gap-y-28 content-container mt-28"
+  >
+    <Content />
+  </section>
+  <section class="my-28 flex h-[400px] max-w-[80%] mx-auto">
+    {
+      Array.from({ length: 6 }).map((_, i) => (
+        <Image
+          src="https://t3.ftcdn.net/jpg/06/15/49/68/360_F_615496890_W34yB8VDE6n5pehb5QCt1ek5oEvRo9qA.jpg"
+          alt="Kebin"
+          class="w-0 flex-grow object-cover transition-all duration-500 cursor-crosshair hover:w-[400px]"
+          width={400}
+          height={400}
+        />
+      ))
+    }
+  </section>
+</MainLayout>
+
+<style is:inline>
+  .underscore::after {
+    position: absolute;
+    content: "";
+    height: 5px;
+    width: 166px;
+    background-color: #db141c;
+    bottom: -10px;
+    left: 0;
+  }
+
+  .content-container > article > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.25rem /* 40px */ * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.25rem /* 40px */ * var(--tw-space-y-reverse));
+  }
+
+  .content-container > p > img {
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
+  }
+</style>
