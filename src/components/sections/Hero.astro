@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import ImageSlider from "@components/ui/ImageSlider.astro";
 
 import concurso from "@assets/images/hero/concurso-de-meritos.webp";
@@ -6,46 +8,62 @@ import inscripciones from "@assets/images/hero/inscripciones.webp";
 import sinfonia from "@assets/images/hero/la-sinfonia-de-nuestra-gente.webp";
 import admisiones from "@assets/images/hero/lista-de-admisiones.webp";
 import portal from "@assets/images/hero/portal.webp";
+import ImageSliderElement from "@components/ui/ImageSliderElement.astro";
 
 type Images = {
-  width: number;
-  height: number;
   imageMetadata: ImageMetadata;
   alt: string;
 };
 
 const images: Images[] = [
   {
-    width: 1920,
-    height: 1080,
     imageMetadata: concurso,
     alt: "Concurso de Meritos",
   },
   {
-    width: 1920,
-    height: 1080,
     imageMetadata: inscripciones,
     alt: "Inscripciones",
   },
   {
-    width: 1920,
-    height: 1080,
     imageMetadata: sinfonia,
     alt: "La Sinfonia de Nuestra Gente",
   },
   {
-    width: 1920,
-    height: 1080,
     imageMetadata: admisiones,
     alt: "Lista de Admisiones",
   },
   {
-    width: 1920,
-    height: 1080,
     imageMetadata: portal,
     alt: "Portal",
   },
 ];
 ---
 
-<ImageSlider images={images} />
+<ImageSlider>
+  {
+    images.map(({ alt, imageMetadata }) => (
+      <ImageSliderElement class="relative group">
+        <Image
+          src={imageMetadata}
+          alt={alt}
+          width={1920}
+          height={1080}
+          class="object-cover w-full h-full aspect-[16/7] object-center"
+        />
+        <div class="absolute bottom-0 w-full h-0 overflow-hidden group-hover:h-40 transition-all description px-20 backdrop-blur-sm">
+          <p class="text-white text-3xl">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
+            nemo, optio aperiam harum doloremque ipsa commodi eius eaque ipsum
+            pariatur.
+          </p>
+        </div>
+      </ImageSliderElement>
+    ))
+  }
+</ImageSlider>
+
+<style>
+  .description {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000066b4 100%);
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+import EventsCarousel from "@components/EventsCarousel.svelte";
+
+type Event = {
+  id: number;
+  name: string;
+  short_date: string;
+  hour: string;
+  location: string;
+  image: string;
+};
+
+const content = await getCollection("events").then((events) =>
+  events.map((event) => event.data)
+);
+
+const contentLength = Math.round(content.length / 4);
+
+const events: Event[][] = [];
+
+for (let i = 0; i < contentLength; i++) {
+  events.push(content.slice(i * 4, i * 4 + 4));
+}
+---
+
+<EventsCarousel events={[...events]} client:visible />

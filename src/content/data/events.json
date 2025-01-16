@@ -1,0 +1,34 @@
+[
+  {
+    "id": 176,
+    "name": "VII Congreso Nacional e Internacional de Comunicación AFACOM y IX Encuentro de Semilleros 2025. La Comunicación en Plural: Culturas, Territorios y Memorias (Sabes, Conversas y Haceres)",
+    "short_date": "26-MAR",
+    "hour": "8:00",
+    "location": "Popayán",
+    "image": "https://www.unicauca.edu.co/archivos/eventos/EVENTO_66e89ab457e561_58239696.jpeg"
+  },
+  {
+    "id": 288,
+    "name": "Grados Colectivos. Viernes 28 de marzo de 2025",
+    "short_date": "28-MAR",
+    "hour": "8:00",
+    "location": "Paraninfo Francisco José de Caldas",
+    "image": "https://www.unicauca.edu.co/archivos/eventos/EVENTO_67867516ba2186_72954055.png"
+  },
+  {
+    "id": 281,
+    "name": "Seminario de Maestría en Ciencias-Química",
+    "short_date": "16-DIC",
+    "hour": "18:00",
+    "location": "Salon 220 de Postgrados FACNED",
+    "image": "https://www.unicauca.edu.co/archivos/eventos/EVENTO_675b50b7cf0877_37559011.jpg"
+  },
+  {
+    "id": 280,
+    "name": "Club de Caminantes Paso a Pasos",
+    "short_date": "14-DIC",
+    "hour": "07:30",
+    "location": "Frente Jardinez de Paz",
+    "image": "https://www.unicauca.edu.co/archivos/eventos/EVENTO_6751b151047028_52133380.png"
+  }
+]

@@ -57,9 +57,22 @@ const publicDocuments = defineCollection({
   }),
 });
 
+const events = defineCollection({
+  loader: file("src/content/data/events.json"),
+  schema: z.object({
+    id: z.number(),
+    name: z.string(),
+    short_date: z.string(),
+    hour: z.string(),
+    location: z.string(),
+    image: z.string(),
+  }),
+});
+
 export const collections = {
   navMenu,
   footer,
   news,
   publicDocuments,
+  events,
 };

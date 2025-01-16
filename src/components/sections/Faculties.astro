@@ -1,0 +1,101 @@
+---
+import ImageSlider from "@components/ui/ImageSlider.astro";
+
+import campusArte from "@assets/images/faculties/CAMPUS_ARTE-scaled.webp";
+import campusCDU from "@assets/images/faculties/CAMPUS_CDU-scaled.webp";
+import campusCiudadela from "@assets/images/faculties/CAMPUS_CIUDADELA-scaled.webp";
+import campusCivil from "@assets/images/faculties/CAMPUS_CIVIL-scaled.webp";
+import campusContables from "@assets/images/faculties/CAMPUS_CONTABLES-scaled.webp";
+import campusDerecho from "@assets/images/faculties/CAMPUS_DERECHO-scaled.webp";
+import campusEduca from "@assets/images/faculties/CAMPUS_EDUCA-scaled.webp";
+import campusFaca from "@assets/images/faculties/CAMPUS_FACA-scaled.webp";
+import campusFiet from "@assets/images/faculties/CAMPUS_FIET-scaled.webp";
+import campusHumanas from "@assets/images/faculties/CAMPUS_HUMANAS-scaled.webp";
+import campusSalud from "@assets/images/faculties/CAMPUS_SALUD-scaled.webp";
+import campusContacto55 from "@assets/images/faculties/CAMPUS-CONTACTO-55-scaled.webp";
+import campusCulturaMosquera from "@assets/images/faculties/CAMPUS-CULTURA-MOSQUERA-scaled.webp";
+import fachadaCieloAzul from "@assets/images/faculties/Fachada-Cielo-Azul-scaled.webp";
+import ImageSliderElement from "@components/ui/ImageSliderElement.astro";
+import { Image } from "astro:assets";
+
+const faculties = [
+  {
+    src: campusArte,
+  },
+  {
+    src: campusFaca,
+  },
+  {
+    src: campusSalud,
+  },
+  {
+    src: campusContables,
+  },
+  {
+    src: campusHumanas,
+  },
+  {
+    src: campusEduca,
+  },
+  {
+    src: campusDerecho,
+  },
+  {
+    src: campusCivil,
+  },
+  {
+    src: campusFiet,
+  },
+  {
+    src: campusCiudadela,
+  },
+  {
+    src: fachadaCieloAzul,
+  },
+  {
+    src: campusCDU,
+  },
+  {
+    src: campusCulturaMosquera,
+  },
+  {
+    src: campusContacto55,
+  },
+] as const;
+---
+
+<ImageSlider>
+  {
+    faculties.map(({ src }) => (
+      <ImageSliderElement class="relative group">
+        <Image
+          src={src}
+          alt="Facultad de Artes"
+          width={1920}
+          height={1080}
+          class="object-cover w-full h-full aspect-[16/8] object-center"
+        />
+        <div
+          class:list={[
+            "absolute bottom-0 h-full w-full overflow-hidden px-20 description flex items-center",
+          ]}
+        >
+          <h3 class="text-white text-5xl w-1/2 px-32 font-bold">
+            Facultad de Artes
+          </h3>
+        </div>
+      </ImageSliderElement>
+    ))
+  }
+</ImageSlider>
+
+<style>
+  .description {
+    background: linear-gradient(
+      90deg,
+      #000066b4 0%,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+</style>

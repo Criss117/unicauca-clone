@@ -1,45 +1,12 @@
 ---
-import { Image } from "astro:assets";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-type Images = {
-  width: number;
-  height: number;
-  imageMetadata: ImageMetadata;
-  alt: string;
-};
-
-interface Props {
-  images: Images[];
-}
-
-const { images } = Astro.props;
 ---
 
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
-    {
-      images.map(({ alt, imageMetadata, height, width }) => (
-        <div class="swiper-slide cursor-grab relative group">
-          <Image
-            src={imageMetadata}
-            alt={alt}
-            width={width}
-            height={height}
-            class="object-contain w-full h-full aspect-[16/7] object-center"
-          />
-          <div class="absolute bottom-0 w-full h-0 overflow-hidden group-hover:h-40 transition-all description px-20 backdrop-blur-sm">
-            <p class="text-white text-3xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Similique nemo, optio aperiam harum doloremque ipsa commodi eius
-              eaque ipsum pariatur.
-            </p>
-          </div>
-        </div>
-      ))
-    }
+    <slot />
   </div>
   <div class="swiper-button-next"></div>
   <div class="swiper-button-prev"></div>
@@ -97,9 +64,5 @@ const { images } = Astro.props;
   .swiper {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .description {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000066b4 100%);
   }
 </style>
