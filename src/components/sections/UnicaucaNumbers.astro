@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+
+import NumberFlow from "@components/ui/NumberFLow.svelte";
+
+import acreditaciones from "@assets/images/unicauca-numbers/acreditaciones.webp";
+import egresados from "@assets/images/unicauca-numbers/egresados.webp";
+import estudiantes from "@assets/images/unicauca-numbers/estudiantes.webp";
+import investigaciones from "@assets/images/unicauca-numbers/investigaciones.webp";
+import programas from "@assets/images/unicauca-numbers/programas.webp";
+import { cn } from "@lib/utils";
+
+const numbersUnicauca = [
+  {
+    value: 15804,
+    label: "Estudiantes",
+    src: estudiantes,
+    hoverColor: "hover:bg-util-1/80",
+  },
+  {
+    value: 179,
+    label: "Programas",
+    src: programas,
+    hoverColor: "hover:bg-util-2/80",
+  },
+  {
+    value: 1178,
+    label: "Egresados 2024-1",
+    src: egresados,
+    hoverColor: "hover:bg-util-3/80",
+  },
+  {
+    value: 12,
+    label: "Proyectos de investigación",
+    src: investigaciones,
+    hoverColor: "hover:bg-util-4/80",
+  },
+  {
+    value: 21,
+    label: "Acreditaciones",
+    src: acreditaciones,
+    hoverColor: "hover:bg-util-5/80",
+  },
+] as const;
+---
+
+<section class="mt-20 w-full space-y-8">
+  <h2 class="text-4xl text-gray-400 font-bold text-center">
+    <a href="/">Unicauca en Cifras</a>
+  </h2>
+
+  <ul class="flex w-full">
+    {
+      numbersUnicauca.map(({ value, label, src, hoverColor }) => (
+        <a
+          href="/"
+          class="w-1/5 flex flex-col items-center justify-center h-80 relative"
+        >
+          <Image
+            src={src}
+            alt={label}
+            width={600}
+            height={600}
+            class="object-cover w-full h-full aspect-square object-center"
+          />
+          <div
+            class:list={[
+              "absolute bottom-0 w-full h-full flex flex-col justify-center items-center bg-primary/80 transition-colors",
+              hoverColor,
+            ]}
+          >
+            <NumberFlow
+              {value}
+              format={{ notation: "standard" }}
+              client:visible
+            />
+            <p class="text-white text-xl text-balance">{label}</p>
+          </div>
+        </a>
+      ))
+    }
+  </ul>
+</section>
+<div class="w-full h-2 flex">
+  <div class="w-1/5 h-full bg-util-1"></div>
+  <div class="w-1/5 h-full bg-util-2"></div>
+  <div class="w-1/5 h-full bg-util-3"></div>
+  <div class="w-1/5 h-full bg-util-4"></div>
+  <div class="w-1/5 h-full bg-util-5"></div>
+</div>

@@ -17,6 +17,13 @@ export default {
           primary: "#e0e0ff",
           secondary: "#5056ac",
         },
+        util: {
+          1: "#db141c",
+          2: "#ff6c08",
+          3: "#ffb000",
+          4: "#00aae5",
+          5: "#5a00ba",
+        },
       },
     },
   },
