@@ -2,38 +2,50 @@
 import { Image } from "astro:assets";
 
 import ImageSlider from "@components/ui/ImageSlider.astro";
+import ImageSliderElement from "@components/ui/ImageSliderElement.astro";
 
 import concurso from "@assets/images/hero/concurso-de-meritos.webp";
 import inscripciones from "@assets/images/hero/inscripciones.webp";
 import sinfonia from "@assets/images/hero/la-sinfonia-de-nuestra-gente.webp";
 import admisiones from "@assets/images/hero/lista-de-admisiones.webp";
 import portal from "@assets/images/hero/portal.webp";
-import ImageSliderElement from "@components/ui/ImageSliderElement.astro";
+
+import concursoMobile from "@assets/images/hero/concurso-de-meritos_mobile.webp";
+import inscripcionesMobile from "@assets/images/hero/reforma-pensional_mobile.webp";
+import sinfoniaMobile from "@assets/images/hero/la-sinfonia-de-nuestra-gente_mobile.webp";
+import admisionesMobile from "@assets/images/hero/lista-de-admisiones_mobile.webp";
+import portalMobile from "@assets/images/hero/portal_mobile.webp";
 
 type Images = {
   imageMetadata: ImageMetadata;
+  imageMetadataMobile: ImageMetadata;
   alt: string;
 };
 
 const images: Images[] = [
   {
     imageMetadata: concurso,
+    imageMetadataMobile: concursoMobile,
     alt: "Concurso de Meritos",
   },
   {
     imageMetadata: inscripciones,
+    imageMetadataMobile: inscripcionesMobile,
     alt: "Inscripciones",
   },
   {
     imageMetadata: sinfonia,
+    imageMetadataMobile: sinfoniaMobile,
     alt: "La Sinfonia de Nuestra Gente",
   },
   {
     imageMetadata: admisiones,
+    imageMetadataMobile: admisionesMobile,
     alt: "Lista de Admisiones",
   },
   {
     imageMetadata: portal,
+    imageMetadataMobile: portalMobile,
     alt: "Portal",
   },
 ];
@@ -41,14 +53,21 @@ const images: Images[] = [
 
 <ImageSlider>
   {
-    images.map(({ alt, imageMetadata }) => (
+    images.map(({ alt, imageMetadata, imageMetadataMobile }) => (
       <ImageSliderElement class="relative group">
         <Image
           src={imageMetadata}
           alt={alt}
           width={1920}
           height={1080}
-          class="object-cover w-full h-full aspect-[16/7] object-center"
+          class="object-cover w-full h-full aspect-[3/4] lg:aspect-[16/7] object-center hidden lg:block"
+        />
+        <Image
+          src={imageMetadataMobile}
+          alt={alt}
+          width={1920}
+          height={1080}
+          class="object-cover w-full h-full aspect-[3/4] lg:aspect-[16/7] object-center lg:hidden"
         />
         <div class="absolute bottom-0 w-full h-0 overflow-hidden group-hover:h-40 transition-all description px-20 backdrop-blur-sm">
           <p class="text-white text-3xl">

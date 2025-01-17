@@ -81,9 +81,13 @@ const footerItems = footerLinks.map((item) => {
 ---
 
 <footer class="bg-bg-secondary min-h-96">
-  <div class="w-full flex justify-between px-36 py-10">
-    <div class="space-y-5 min-h-full flex flex-col">
-      <header>
+  <div
+    class="w-full flex justify-between px-2 lg:px-36 py-10 flex-col lg:flex-row items-center space-y-10 lg:space-y-0"
+  >
+    <div class="space-y-5 min-h-full flex flex-col items-center lg:items-start">
+      <header
+        class="flex flex-col-reverse lg:flex-col items-center lg:items-start"
+      >
         <h2 class="text-primary font-semibold text-3xl">
           Universidad del Cauca
         </h2>
@@ -106,6 +110,7 @@ const footerItems = footerLinks.map((item) => {
           ))
         }
       </div>
+      <!-- socials -->
       <div class="flex items-end gap-x-2 flex-grow">
         <div class="flex gap-x-2 items-center">
           <p class="text-primary font-semibold">Síguenos en:</p>
@@ -123,7 +128,8 @@ const footerItems = footerLinks.map((item) => {
         </div>
       </div>
     </div>
-    <div class="space-y-5">
+    <!-- enlaces de interes -->
+    <div class="space-y-5 text-center lg:text-start">
       <h3 class="text-primary font-semibold text-3xl">
         {footerItems[0].title}
       </h3>
@@ -141,7 +147,8 @@ const footerItems = footerLinks.map((item) => {
         }
       </ul>
     </div>
-    <div class="space-y-5">
+    <!-- enlaces de interes 2 -->
+    <div class="space-y-5 text-center lg:text-start">
       <h3 class="text-primary font-semibold text-3xl">
         {footerItems[0].title}
       </h3>

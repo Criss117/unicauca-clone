@@ -13,9 +13,9 @@ const publicDocuments = content.map((d) => d.data);
 
 <section
   id="documentos publicos"
-  class="bg-bg-primary min-h-screen flex py-16 gap-x-10 px-5"
+  class="bg-bg-primary min-h-screen flex py-16 gap-x-10 lg:px-5"
 >
-  <header class="w-2/5 flex flex-col justify-between items-end">
+  <header class="lg:w-2/5 lg:flex flex-col justify-between items-end hidden">
     <h2 class="text-white text-4xl font-bold text-end">Documentos Publicos</h2>
     <Picture
       src={documentosPublicos}
@@ -25,7 +25,7 @@ const publicDocuments = content.map((d) => d.data);
       height={700}
     />
   </header>
-  <article class="w-3/5">
+  <article class="lg:w-3/5">
     <PublicDocumentsList documents={publicDocuments} client:visible />
   </article>
 </section>

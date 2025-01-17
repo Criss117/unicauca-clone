@@ -48,12 +48,12 @@ const numbersUnicauca = [
     <a href="/">Unicauca en Cifras</a>
   </h2>
 
-  <ul class="flex w-full">
+  <ul class="flex w-full flex-col md:flex-row">
     {
       numbersUnicauca.map(({ value, label, src, hoverColor }) => (
         <a
           href="/"
-          class="w-1/5 flex flex-col items-center justify-center h-80 relative"
+          class="md:w-1/5 flex flex-col items-center justify-center h-60 lg:h-80 relative"
         >
           <Image
             src={src}

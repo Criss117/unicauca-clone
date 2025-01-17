@@ -12,7 +12,7 @@ const items = news.map((n) => ({
 }));
 ---
 
-<section id="noticias" class="max-w-[80%] mx-auto my-32">
+<section id="noticias" class="lg:max-w-[80%] mx-auto my-32">
   <h2 class="text-gray-600 font-bold text-center text-4xl">Noticias</h2>
 
   <section id="noticias" class="swiper news-swiper mt-10">
@@ -36,7 +36,7 @@ const items = news.map((n) => ({
   import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
   const swiper = new Swiper(".news-swiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     freeMode: true,
     pagination: {
@@ -50,8 +50,18 @@ const items = news.map((n) => ({
     autoplay: {
       delay: 5000,
     },
+    breakpoints: {
+      720: {
+        slidesPerView: 2,
+      },
+      1240: {
+        slidesPerView: 3,
+      },
+    },
     modules: [Pagination, Navigation, Autoplay],
   });
+
+  const s = swiper.slidesPerViewDynamic();
 </script>
 
 <style>

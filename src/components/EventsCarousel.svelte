@@ -57,17 +57,20 @@
   });
 </script>
 
-<section id="listado-eventos" class=" max-w-[70%] mx-auto mt-32 min-h-screen">
-  <div class="flex gap-x-36">
-    <div class="w-1/2">
+<section
+  id="listado-eventos"
+  class="max-w-[95%] lg:max-w-[70%] mx-auto my-32 min-h-screen"
+>
+  <div class="flex lg:gap-x-36 flex-col space-y-10 lg:flex-row lg:space-y-0">
+    <picture class="lg:w-1/2 mx-auto">
       <img
         src={curretImage.src}
         alt={curretImage.alt}
         class="aspect-square"
         loading="lazy"
       />
-    </div>
-    <div class="space-y-5 w-1/2 min-h-[800px]">
+    </picture>
+    <div class="space-y-5 lg:w-1/2 min-h-[800px]">
       <h2 class="text-4xl font-bold text-gray-400">Eventos</h2>
       <ul class="space-y-10">
         {#each curretEvent as event}
@@ -102,7 +105,7 @@
       </ul>
     </div>
   </div>
-  <div class="flex justify-center w-1/2 ml-auto gap-x-2">
+  <div class="flex justify-center lg:w-1/2 ml-auto gap-x-2 mb-20">
     {#if curretEventIndex >= 4 && events.length > 5}
       <span> ... </span>
     {/if}

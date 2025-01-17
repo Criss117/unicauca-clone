@@ -26,13 +26,15 @@
   }
 </script>
 
-<section class="w-full h-full relative">
-  <header class="flex gap-x-5">
+<section class="w-full h-full relative pb-32 lg:pb-0">
+  <header
+    class="flex gap-5 lg:gap-x-5 flex-wrap lg:flex-nowrap w-full justify-center"
+  >
     {#each documents as document}
       <button
         onclick={() => changeDocument(document.slug)}
         class={cn(
-          "px-4 py-2 rounded-xl text-white w-96 transition-all font-semibold",
+          "px-4 py-2 rounded-xl text-white lg:w-96 transition-all font-semibold",
           currentDocument.slug === document.slug &&
             "bg-accent-primary text-primary"
         )}>{document.title}</button

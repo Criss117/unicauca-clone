@@ -73,14 +73,14 @@ const faculties = [
           alt="Facultad de Artes"
           width={1920}
           height={1080}
-          class="object-cover w-full h-full aspect-[16/8] object-center"
+          class="object-cover w-full h-full aspect-[8/16] max-h-[800px] lg:aspect-[16/8] object-center"
         />
         <div
           class:list={[
             "absolute bottom-0 h-full w-full overflow-hidden px-20 description flex items-center",
           ]}
         >
-          <h3 class="text-white text-5xl w-1/2 px-32 font-bold">
+          <h3 class="text-white text-5xl w-1/2 lg:px-32 font-bold">
             Facultad de Artes
           </h3>
         </div>
@@ -94,8 +94,17 @@ const faculties = [
     background: linear-gradient(
       90deg,
       #000066b4 0%,
-      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 0) 80%,
       rgba(0, 0, 0, 0) 100%
     );
+
+    @media (min-width: 1024px) {
+      background: linear-gradient(
+        90deg,
+        #000066b4 0%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    }
   }
 </style>
