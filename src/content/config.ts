@@ -29,14 +29,15 @@ const footer = defineCollection({
   }),
 });
 
-const news = defineCollection({
-  loader: glob({ pattern: "src/content/news/*.md" }),
+const newsList = defineCollection({
+  loader: file("src/content/data/news-list.json"),
   schema: z.object({
+    id: z.number(),
     slug: z.string(),
+    link: z.string(),
     title: z.string(),
-    date: z.date(),
-    hero: z.string(),
     description: z.string(),
+    img: z.string(),
   }),
 });
 
@@ -72,7 +73,7 @@ const events = defineCollection({
 export const collections = {
   navMenu,
   footer,
-  news,
   publicDocuments,
   events,
+  newsList,
 };

@@ -2,13 +2,13 @@
 import NewsCard from "@components/NewsCard.astro";
 import { getCollection } from "astro:content";
 
-const news = await getCollection("news");
+const news = await getCollection("newsList");
 
 const items = news.map((n) => ({
   title: n.data.title,
   slug: n.data.slug,
   description: n.data.description,
-  hero: n.data.hero,
+  hero: n.data.img,
 }));
 ---
 

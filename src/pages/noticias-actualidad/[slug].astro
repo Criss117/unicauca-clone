@@ -5,7 +5,7 @@ import { Image, Picture } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const allNews = await getCollection("news");
+  const allNews = await getCollection("newsList");
 
   return allNews.map((news) => ({
     params: { slug: news.data.slug },
@@ -14,8 +14,6 @@ export async function getStaticPaths() {
 }
 
 const { news } = Astro.props;
-
-const { Content } = await render(news);
 ---
 
 <MainLayout title={news.data.title}>
@@ -33,7 +31,6 @@ const { Content } = await render(news);
     id="listado-de-noticias"
     class="grid grid-cols-2 max-w-[70%] mx-auto gap-x-10 gap-y-28 content-container mt-28"
   >
-    <Content />
   </section>
   <section class="my-28 flex h-[400px] max-w-[80%] mx-auto">
     {
