@@ -1,4 +1,5 @@
-import { file, glob } from "astro/loaders";
+import { ContentSchema } from "@lib/models";
+import { file } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
 const navMenu = defineCollection({
@@ -38,6 +39,7 @@ const newsList = defineCollection({
     title: z.string(),
     description: z.string(),
     img: z.string(),
+    content: z.array(ContentSchema),
   }),
 });
 

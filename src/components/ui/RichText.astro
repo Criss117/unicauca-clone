@@ -1,0 +1,36 @@
+---
+import type { Content, ListContent } from "@lib/models";
+import { Image } from "astro:assets";
+
+interface Props {
+  content: Content[];
+}
+
+const { content } = Astro.props;
+---
+
+{
+  content.map((item) => (
+    <div>
+      {item.map((subItem) => {
+        if (subItem.type === "p") {
+          return <p>{subItem.content}</p>;
+        }
+
+        if (subItem.type === "img") {
+          return (
+            <Image
+              src={subItem.content as string}
+              alt={subItem.alt || ""}
+              inferSize
+            />
+          );
+        }
+
+        if (subItem.type === "li") {
+          return <li>{subItem.content}</li>;
+        }
+      })}
+    </div>
+  ))
+}
